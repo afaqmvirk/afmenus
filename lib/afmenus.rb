@@ -12,8 +12,9 @@ module Afmenus
   end
 
   # Print the menu with the current selection highlighted
-  def self.print_menu(menu_items, current_row, current_col)
+  def self.print_menu(title , menu_items, current_row, current_col)
     clear_console
+    puts title
     menu_items.each_with_index do |row_items, row|
       row_items.each_with_index do |item, col|
         if row == current_row && col == current_col
@@ -29,11 +30,11 @@ module Afmenus
   end
 
   # Prompt the user with the menu
-  def self.prompt(menu_items)
+  def self.prompt(title, menu_items)
     current_row = 0
     current_col = 0
 
-    print_menu(menu_items, current_row, current_col)
+    print_menu(title, menu_items, current_row, current_col)
 
     loop do
       char = STDIN.getch
