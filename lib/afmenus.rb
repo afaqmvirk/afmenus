@@ -12,7 +12,7 @@ module Afmenus
   end
 
   # Print the menu with the current selection highlighted
-  def self.print_menu(title , menu_items, current_row, current_col)
+  def self.print_menu(title, menu_items, current_row, current_col)
     clear_console
     puts title
     menu_items.each_with_index do |row_items, row|
@@ -61,7 +61,7 @@ module Afmenus
         return nil
       end
 
-      print_menu(menu_items, current_row, current_col)
+      print_menu(title, menu_items, current_row, current_col)
     end
   end
 end
